@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang=ja>
   <head>
     <meta charset="utf-8">
-    <title>Progate</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <title>JavaScript Practice</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box{
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        cursor: pointer;
+        transition:0.8s;
+        margin: o 8px 8px 0;
+        text-align: center;
+        line-height: 100px;
+      }
+      .circle{
+        background-color: pink;
+        border-radius: 50%;
+        transform:rotate(360deg);
+      }
+    </style>
   </head>
   <body>
-    <h1 class="title">HTML & CSS の開発環境を用意しよう！</h1>
-    <p>自分のPCでWebページを開発する方法を学習しましょう</p>
+
+    <script>
+      'use strict';
+      
+      for ( let i = 0; i < 100; i++) {
+        const div = document.createElement('div');
+        div.classList.add('box');
+        div.textContent = i;
+
+        div.addEventListener('click',()=>{
+         div.classList.toggle('circle');
+        });
+
+        document.body.appendChild(div);
+      }
+
+    </script>
   </body>
 </html>
